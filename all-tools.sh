@@ -1,94 +1,11 @@
-# GODRECON ULTRA — Single File Advanced Recon Framework
 
-> WARNING:
-> This framework is intended ONLY for authorized penetration testing, bug bounty programs, labs, and legal security research.
->
-> Unauthorized scanning may violate laws and platform policies.
-
----
-
-# Overview
-
-GodRecon Ultra is a professional-grade single-file Bash reconnaissance framework for:
-
-* Bug bounty hunting
-* Penetration testing
-* Attack surface mapping
-* Continuous reconnaissance
-* API discovery
-* Cloud asset discovery
-* JavaScript intelligence
-* Vulnerability automation
-* Recursive subdomain enumeration
-* Delta monitoring
-* Asset correlation
-
-Features:
-
-* Auto-installs missing tools
-* Skips existing installations
-* Tracks failed installs
-* Resume capability
-* Parallel processing
-* SQLite database
-* Recursive enumeration
-* CDN/WAF detection
-* Smart filtering
-* Cloud bucket discovery
-* API endpoint discovery
-* GraphQL discovery
-* Advanced crawling
-* JS secret extraction
-* Favicon hashing
-* TLS reconnaissance
-* Nuclei automation
-* Vulnerability prioritization
-* Continuous monitoring mode
-
----
-
-# Recommended OS
-
-* Kali Linux
-* Ubuntu 24+
-* Parrot OS
-
----
-
-# Installation
-
-```bash
-chmod +x godrecon-ultra.sh
-./godrecon-ultra.sh example.com --full
-```
-
----
-
-# Example Modes
-
-```bash
-./godrecon-ultra.sh target.com --full
-./godrecon-ultra.sh target.com --deep
-./godrecon-ultra.sh target.com --monitor
-./godrecon-ultra.sh target.com --resume
-./godrecon-ultra.sh target.com --api-only
-./godrecon-ultra.sh target.com --stealth
-```
-
----
-
-# Main Script
-
-```bash
-
+#!/bin/bash
 # Enforce running with bash, not sh/dash
 if [ -z "$BASH_VERSION" ]; then
     echo "[!] Please run this script with bash:"
     echo "    bash $0 <domain> [mode]"
     exit 1
 fi
-
-#!/bin/bash
 
 # =========================================================
 # GODRECON ULTRA
