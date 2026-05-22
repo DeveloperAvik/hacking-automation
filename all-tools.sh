@@ -80,6 +80,14 @@ chmod +x godrecon-ultra.sh
 # Main Script
 
 ```bash
+
+# Enforce running with bash, not sh/dash
+if [ -z "$BASH_VERSION" ]; then
+    echo "[!] Please run this script with bash:"
+    echo "    bash $0 <domain> [mode]"
+    exit 1
+fi
+
 #!/bin/bash
 
 # =========================================================
@@ -148,8 +156,9 @@ WORDLISTS="$HOME/.godrecon/wordlists"
 # VALIDATION
 # =========================================================
 
+
 if [ -z "$DOMAIN" ]; then
-    echo "Usage: ./godrecon-ultra.sh domain.com [mode]"
+    echo "Usage: $0 domain.com [mode]"
     exit 1
 fi
 
