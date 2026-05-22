@@ -311,7 +311,13 @@ passive_enum() {
         return
     fi
 
+
     info "Starting passive enumeration"
+
+    if ! command -v subfinder &>/dev/null; then
+        error "subfinder is not installed or not in PATH. Please run the tool installation step or check your Go bin directory."
+        exit 1
+    fi
 
     subfinder -d "$DOMAIN" -all -silent > "$ROOT/subdomains/subfinder.txt"
 
